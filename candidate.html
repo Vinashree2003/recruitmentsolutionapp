@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Candidate Search</title>
+  <script>
+    function searchCandidates() {
+   
+      var location = document.getElementById("location").value;
+      var jobRole = document.getElementById("jobRole").value;
+     
+      var candidates = [
+        { name: "Vinashree Meshram", location: "Mumbai", jobRole: "Software Engineer" },
+        { name: "Piyush Walde", location: "Nagpur", jobRole: "UI Designer" },
+        { name: "Aman Bodele", location: "Chicago", jobRole: "Project Manager" },
+        {name: "Grishal Gaydhane", location: "New York", jobRole: "Software developer"}
+      ];
+      
+      // Display the search result
+      var searchResult = document.getElementById("searchResult");
+      searchResult.innerHTML = "";
+      
+      if (candidates.length === 0) {
+        searchResult.innerHTML = "No candidates found.";
+      } else {
+        for (var i = 0; i < candidates.length; i++) {
+          var candidate = candidates[i];
+          var candidateInfo = document.createElement("div");
+          candidateInfo.innerHTML = "Name: " + candidate.name + "<br>" +
+                                    "Location: " + candidate.location + "<br>" +
+                                    "Job Role: " + candidate.jobRole + "<br><br>";
+          searchResult.appendChild(candidateInfo);
+        }
+      }
+    }
+  </script>
+
+
+<head>
+  
+  <style>
+   
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    
+    h1 {
+      text-align: center;
+    }
+    
+    label {
+      font-weight: bold;
+      margin-left: 500px;
+    }
+    
+    input[type="text"] {
+      width: 200px;
+      padding: 5px;
+      margin-bottom: 10px;
+    }
+    
+    button {
+      margin-left: 500px;
+      padding: 10px 20px;
+      background-color: #eb53c5;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    
+    #searchResult {
+      margin-top: 20px;
+    }
+    
+    #searchResult div {
+      background-color: #f0f0f0;
+      box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+      padding: 15px;
+      margin-bottom: 15px;
+    }
+  </style>
+  <script>
+    // JavaScript code for candidate search functionality...
+  </script>
+</head>
+<body>
+  <h1>Candidate Search</h1>
+  
+  <label for="location">Location:</label>
+  <input type="text" id="location"><br>
+  
+  <label for="jobRole">Job Role:</label>
+  <input type="text" id="jobRole"><br>
+  
+  <button onclick="searchCandidates()">Search</button>
+  
+  <div id="searchResult"></div>
+</body>
+</html>
+
